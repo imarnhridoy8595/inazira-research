@@ -1,0 +1,19 @@
+title: Inazira Research
+description: A running collection of research write-ups, notes, and findings.
+url: "https://research.inazira.com"
+baseurl: ""
+
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
