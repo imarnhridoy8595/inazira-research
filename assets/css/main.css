@@ -355,6 +355,7 @@ a:focus-visible, button:focus-visible {
   padding: 18px 22px;
   background: var(--paper-raised);
   border: 1px solid var(--line);
+  border-left: 4px solid var(--line);
   color: var(--ink);
   text-decoration: none;
   font-family: 'Source Serif 4', Georgia, serif;
@@ -366,10 +367,20 @@ a:focus-visible, button:focus-visible {
 
 .field-nav-card:hover,
 .field-nav-card:focus-visible {
-  border-color: var(--accent-warm);
-  background: var(--paper);
   transform: translateY(-1px);
+  filter: brightness(1.04);
 }
+
+.field-nav-card:nth-child(1) { background: #F3E4DE; border-left-color: #B5573C; }
+.field-nav-card:nth-child(2) { background: #E3EDE2; border-left-color: #3F7A4E; }
+.field-nav-card:nth-child(3) { background: #E1E9F0; border-left-color: #33587D; }
+.field-nav-card:nth-child(4) { background: #F4EBD6; border-left-color: #A8752F; }
+.field-nav-card:nth-child(5) { background: #EAE2F0; border-left-color: #6B4A8A; }
+.field-nav-card:nth-child(6) { background: #DDEDEA; border-left-color: #2E7D72; }
+.field-nav-card:nth-child(7) { background: #F0E1E8; border-left-color: #A13F63; }
+.field-nav-card:nth-child(8) { background: #EDEAE0; border-left-color: #6B6455; }
+
+.field-nav-card:hover { border-color: var(--line); }
 
 @media (max-width: 560px) {
   .field-nav-grid { grid-template-columns: 1fr; }
