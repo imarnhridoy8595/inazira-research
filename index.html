@@ -1,10 +1,11 @@
 ---
 layout: default
 ---
+<div id="articles">
 {% if site.posts.size > 0 %}
-<ul class="index-list">
+<ul class="index-list" id="index-list">
   {% for post in site.posts %}
-  <li class="index-entry">
+  <li class="index-entry" data-title="{{ post.title | strip_html | escape }}" data-excerpt="{{ post.excerpt | strip_html | escape }}">
     <a href="{{ post.url | relative_url }}">
       <div class="entry-top">
         <h2 class="entry-title">{{ post.title }}</h2>
@@ -17,6 +18,10 @@ layout: default
   </li>
   {% endfor %}
 </ul>
+<p class="empty-note" id="no-results" style="display:none;">No articles match your search.</p>
 {% else %}
 <p class="empty-note">No articles published yet. Add a Markdown file to <code>_posts</code> to get started.</p>
 {% endif %}
+</div>
+
+<script src="{{ '/assets/js/search.js' | relative_url }}"></script>

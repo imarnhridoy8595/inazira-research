@@ -39,21 +39,105 @@ body {
   padding: 0 24px;
 }
 
-/* Site header */
+/* Top bar: logo left, nav center, search right */
+
+.site-topbar {
+  background: var(--paper-raised);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 24px;
+}
+
+.topbar-logo {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.topbar-logo .mark { color: var(--accent); }
+
+.topbar-nav {
+  display: flex;
+  gap: 26px;
+  flex: 1;
+  justify-content: center;
+}
+
+.topbar-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.92rem;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  white-space: nowrap;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.topbar-nav a:hover,
+.topbar-nav a:focus-visible {
+  color: var(--ink);
+  border-bottom-color: var(--accent-warm);
+}
+
+.topbar-search {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: 4px;
+  padding: 6px 6px 6px 12px;
+  gap: 6px;
+}
+
+.topbar-search input {
+  border: none;
+  background: none;
+  outline: none;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.88rem;
+  color: var(--ink);
+  width: 150px;
+}
+
+.topbar-search input::placeholder { color: var(--ink-faint); }
+
+.topbar-search button {
+  border: none;
+  background: none;
+  color: var(--ink-soft);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.topbar-search button:hover { color: var(--accent); }
+
+@media (max-width: 760px) {
+  .topbar-inner { flex-wrap: wrap; padding: 14px 20px; }
+  .topbar-nav { order: 3; width: 100%; justify-content: flex-start; gap: 18px; }
+  .topbar-search input { width: 110px; }
+}
+
+/* Hero header (below top bar) */
 
 .site-header {
-  padding: 72px 0 40px;
+  padding: 56px 0 32px;
   animation: rise 0.6s ease-out;
 }
 
 @keyframes rise {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-.site-header a {
-  text-decoration: none;
-  color: inherit;
 }
 
 .wordmark {
@@ -74,27 +158,6 @@ body {
   color: var(--ink-soft);
   font-size: 1.02rem;
   max-width: 46ch;
-}
-
-.site-nav {
-  margin-top: 28px;
-  display: flex;
-  gap: 24px;
-  font-size: 0.95rem;
-}
-
-.site-nav a {
-  color: var(--ink-soft);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 2px;
-  transition: border-color 0.15s ease, color 0.15s ease;
-}
-
-.site-nav a:hover,
-.site-nav a:focus-visible {
-  color: var(--ink);
-  border-bottom-color: var(--accent-warm);
 }
 
 hr.rule {

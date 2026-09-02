@@ -8,17 +8,30 @@
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 <body>
+  <div class="site-topbar">
+    <div class="wrap topbar-inner">
+      <a class="topbar-logo" href="{{ '/' | relative_url }}">Inazira <span class="mark">Research</span></a>
+
+      <nav class="topbar-nav">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/' | relative_url }}#articles">Articles</a>
+        <a href="{{ '/papers/' | relative_url }}">Papers</a>
+        <a href="{{ '/contact/' | relative_url }}">Contact</a>
+      </nav>
+
+      <form class="topbar-search" action="{{ '/' | relative_url }}" method="get">
+        <input type="text" name="q" placeholder="Search articles…" aria-label="Search articles">
+        <button type="submit" aria-label="Search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
   <div class="wrap">
     <header class="site-header">
-      <a href="{{ '/' | relative_url }}">
-        <h1 class="wordmark">Inazira <span class="mark">Research</span></h1>
-      </a>
+      <h1 class="wordmark">Inazira <span class="mark">Research</span></h1>
       <p class="tagline">{{ site.description }}</p>
-      <nav class="site-nav">
-        <a href="{{ '/' | relative_url }}">Articles</a>
-        <a href="{{ '/papers/' | relative_url }}">Papers</a>
-        <a href="{{ '/about/' | relative_url }}">About</a>
-      </nav>
     </header>
     <hr class="rule">
   </div>
