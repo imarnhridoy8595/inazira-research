@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<article>
+  <div class="article-header">
+    <a class="back-link" href="{{ '/' | relative_url }}">&larr; All articles</a>
+    <h2 class="article-title">{{ page.title }}</h2>
+    <p class="article-meta">
+      {{ page.date | date: "%-d %B %Y" }}
+      {% if page.tags.size > 0 %} · {{ page.tags | join: ", " }}{% endif %}
+    </p>
+  </div>
+  <div class="article-body">
+    {{ content }}
+  </div>
+</article>
