@@ -4,12 +4,14 @@
 const ARXIV_API = "https://export.arxiv.org/api/query";
 
 const FIELDS = [
-  { id: "ai-ml", label: "AI & Machine Learning", query: "cat:cs.AI+OR+cat:cs.LG" },
-  { id: "cs", label: "Computer Science", query: "cat:cs.*" },
-  { id: "physics", label: "Physics", query: "cat:physics.*" },
-  { id: "math", label: "Mathematics", query: "cat:math.*" },
+  { id: "social", label: "Social Research", query: "cat:cs.CY+OR+cat:econ.GN+OR+all:%22social+science%22" },
   { id: "bio", label: "Biology & Life Sciences", query: "cat:q-bio.*" },
-  { id: "econ", label: "Economics & Finance", query: "cat:econ.*+OR+cat:q-fin.*" }
+  { id: "ai-ml", label: "AI & Machine Learning", query: "cat:cs.AI+OR+cat:cs.LG" },
+  { id: "econ", label: "Economics & Finance", query: "cat:econ.*+OR+cat:q-fin.*" },
+  { id: "cs", label: "Computer Science", query: "cat:cs.*" },
+  { id: "math", label: "Mathematics", query: "cat:math.*" },
+  { id: "physics", label: "Physics", query: "cat:physics.*" },
+  { id: "others", label: "Others", query: "cat:stat.*+OR+cat:eess.*" }
 ];
 
 const RESULTS_PER_FIELD = 5;
@@ -97,7 +99,7 @@ async function loadField(field) {
     renderField(field, entries);
   } catch (err) {
     if (list) {
-      list.innerHTML = `<p class="paper-empty">Couldn't load this field right now. <a href="https://arxiv.org/list/${field.id === 'ai-ml' ? 'cs.AI' : field.id}/recent" target="_blank" rel="noopener noreferrer">Browse on arXiv instead</a>.</p>`;
+      list.innerHTML = `<p class="paper-empty">Couldn't load this field right now. <a href="https://arxiv.org" target="_blank" rel="noopener noreferrer">Browse arXiv directly</a>.</p>`;
     }
     console.error(`Failed to load ${field.label}:`, err);
   }

@@ -1,6 +1,22 @@
 ---
 layout: default
 ---
+<section class="field-nav">
+  <h2 class="section-heading">Browse by Field</h2>
+  <div class="field-nav-grid">
+    <a class="field-nav-card" href="{{ '/papers/' | relative_url }}#field-social">Social Research</a>
+    <a class="field-nav-card" href="{{ '/papers/' | relative_url }}#field-bio">Biology &amp; Life Sciences</a>
+    <a class="field-nav-card" href="{{ '/papers/' | relative_url }}#field-ai-ml">AI &amp; Machine Learning</a>
+    <a class="field-nav-card" href="{{ '/papers/' | relative_url }}#field-econ">Economics &amp; Finance</a>
+    <a class="field-nav-card" href="{{ '/papers/' | relative_url }}#field-cs">Computer Science</a>
+    <a class="field-nav-card" href="{{ '/papers/' | relative_url }}#field-math">Mathematics</a>
+    <a class="field-nav-card" href="{{ '/papers/' | relative_url }}#field-physics">Physics</a>
+    <a class="field-nav-card" href="{{ '/papers/' | relative_url }}#field-others">Others</a>
+  </div>
+</section>
+
+<hr class="rule">
+
 <div id="articles">
 {% if site.posts.size > 0 %}
 <ul class="index-list" id="index-list">

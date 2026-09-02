@@ -328,6 +328,53 @@ a:focus-visible, button:focus-visible {
   outline-offset: 2px;
 }
 
+/* Homepage: field browsing cards */
+
+.field-nav {
+  padding: 40px 0 8px;
+}
+
+.section-heading {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 18px;
+}
+
+.field-nav-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.field-nav-card {
+  display: flex;
+  align-items: center;
+  min-height: 84px;
+  padding: 18px 22px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.3;
+  transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
+}
+
+.field-nav-card:hover,
+.field-nav-card:focus-visible {
+  border-color: var(--accent-warm);
+  background: var(--paper);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 560px) {
+  .field-nav-grid { grid-template-columns: 1fr; }
+}
+
 /* Papers page */
 
 .papers-intro {
